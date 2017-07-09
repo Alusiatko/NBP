@@ -6,5 +6,6 @@ public class MainClass {
         ClientAction clientAction = new ClientAction();
         CurrencyHelper currencyHelper = new CurrencyHelper();
         CurrencyPair currencyPair = currencyHelper.takeExchangeRate(clientAction.chooseCurrency());
+        DateRange dateRange = clientAction.chooseDate();
     }
 }
