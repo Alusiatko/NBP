@@ -1,11 +1,14 @@
 package pl.parser.nbp;
 
-public class CurrencyHelper {
+import pl.parser.nbp.model.Currency;
+import pl.parser.nbp.model.CurrencyPair;
+import pl.parser.nbp.model.NbpDaily;
 
-    //next step:
-    //BigDecimal takeExchangeRate(Currency chosenCurrency, Date startingDate, Date endDate);
-    public CurrencyPair takeExchangeRate(Currency chosenCurrency) {
-        NBPDaily nbpDaily = new NBPDaily();
+@Deprecated
+class CurrencyHelper {
+
+    CurrencyPair takeExchangeRate(Currency chosenCurrency) {
+        NbpDaily nbpDaily = new NbpDaily();
         CurrencyPair currencyPair = null;
         switch (chosenCurrency) {
             case USD:
@@ -22,6 +25,7 @@ public class CurrencyHelper {
                 break;
             default:
                 System.out.println("Your exchange rate is unavailable");
+                break;
         }
         System.out.println(currencyPair);
         return currencyPair;

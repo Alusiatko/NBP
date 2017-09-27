@@ -1,4 +1,4 @@
-package pl.parser.nbp;
+package pl.parser.nbp.model;
 
 import java.math.BigDecimal;
 
@@ -6,24 +6,24 @@ public class CurrencyPair {
     private BigDecimal bid;
     private BigDecimal ask;
 
-    public CurrencyPair(BigDecimal bid, BigDecimal ask) {
+    CurrencyPair(BigDecimal bid, BigDecimal ask) {
         this.bid = bid;
         this.ask = ask;
     }
 
-    public BigDecimal getBid() {
+    BigDecimal getBid() {
         return bid;
     }
 
-    public BigDecimal getAsk() {
+    BigDecimal getAsk() {
         return ask;
     }
 
-    public void setBid(BigDecimal bid) {
+    void setBid(BigDecimal bid) {
         this.bid = bid;
     }
 
-    public void setAsk(BigDecimal ask) {
+    void setAsk(BigDecimal ask) {
         this.ask = ask;
     }
 

@@ -1,4 +1,4 @@
-package pl.parser.nbp;
+package pl.parser.nbp.model;
 
 public class DateRange {
     private String startDate;
@@ -9,19 +9,19 @@ public class DateRange {
         this.endDate = endDate;
     }
 
-    public String getStartDate() {
+    String getStartDate() {
         return startDate;
     }
 
-    public String getEndDate() {
+    String getEndDate() {
         return endDate;
     }
 
-    public void setStartDate(String startDate) {
+    void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public void setEndDate(String endDate) {
+    void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 

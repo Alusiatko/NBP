@@ -1,5 +1,7 @@
 package pl.parser.nbp;
 
-public interface ClientTerminal {
+import pl.parser.nbp.model.Currency;
+
+interface ClientTerminal {
     Currency chooseCurrency();
 }

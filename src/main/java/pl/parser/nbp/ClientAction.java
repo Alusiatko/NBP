@@ -1,9 +1,12 @@
 package pl.parser.nbp;
 
+import pl.parser.nbp.model.Currency;
+import pl.parser.nbp.model.DateRange;
+
 import java.util.Scanner;
 
 
-public class ClientAction implements ClientTerminal {
+class ClientAction implements ClientTerminal {
 
     private Scanner scanner = new Scanner(System.in);
 
@@ -14,7 +17,7 @@ public class ClientAction implements ClientTerminal {
         return Currency.valueOf(chosenCurrency);
     }
 
-    public DateRange chooseDate() {
+    DateRange chooseDate() {
         System.out.println("Enter starting date YYYY-MM-DD");
         String startDate = scanner.nextLine().trim();
 

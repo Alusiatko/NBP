@@ -1,23 +1,36 @@
 package pl.parser.nbp;
 
-import com.google.common.collect.Lists;
+import pl.parser.nbp.model.NbpCurrencyData;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CalculationHelper {
-    public double countAverage(List<String> prices) {
+class CalculationHelper {
 
-        List<Double> doubleList = Lists.newArrayList();
-        doubleList.addAll(prices.stream().map(Double::parseDouble).collect(Collectors.toList()));
+    List<Double> convertToDouble(List<NbpCurrencyData> nbpCurrencyData) {
+        return nbpCurrencyData.stream()
+                .map(NbpCurrencyData::getBid)
+                .collect(Collectors.toList());
+    }
 
-        /*for (String price : prices) {
-            double doublePrice = Double.parseDouble(price);
-            doubleList.add(doublePrice);
-        }*/
+    Double countAverage(List<Double> prices) {
+        return prices.stream()
+                .mapToDouble(a -> a)
+                .average()
+                .orElse(0);
+    }
 
-        //return doubleList.stream().mapToDouble(a -> a).average().orElse(0);
-        double avg = doubleList.stream().mapToDouble(a -> a).average().orElse(0);
-        return avg;
+    Double countStandardDeviation(List<Double> prices) {
+
+        double standardDeviation = 0;
+
+        for (Double price : prices) {
+            double part = price - countAverage(prices);
+            standardDeviation += (part * part);
+        }
+        int pricesListSize = prices.size();
+        standardDeviation /= pricesListSize * (pricesListSize - 1);
+
+        return Math.sqrt(standardDeviation);
     }
 }

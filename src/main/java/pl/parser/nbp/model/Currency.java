@@ -1,4 +1,4 @@
-package pl.parser.nbp;
+package pl.parser.nbp.model;
 
 public enum Currency {
     USD,
