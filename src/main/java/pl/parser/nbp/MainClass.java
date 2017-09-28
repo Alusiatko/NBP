@@ -13,11 +13,8 @@ class MainClass {
         DateRange dateRange = clientAction.chooseDate();
         Currency chosenCurrency = clientAction.chooseCurrency();
 
-       // CurrencyHelper currencyHelper = new CurrencyHelper();
-       // CurrencyPair currencyPair = currencyHelper.takeExchangeRate(chosenCurrency);
-
-        LocalNbpApi localNbpApi = new LocalNbpApi();
-        List<NbpCurrencyData> data = localNbpApi.fetchNBPCurrencyData(chosenCurrency, dateRange);
+        NbpApi nbpApi = new JsonNbpApi();
+        List<NbpCurrencyData> data = nbpApi.fetchNBPCurrencyData(chosenCurrency, dateRange);
 
         CalculationHelper calculationHelper = new CalculationHelper();
         List<Double> doubleList = calculationHelper.convertToDouble(data);

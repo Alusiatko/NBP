@@ -9,19 +9,19 @@ public class DateRange {
         this.endDate = endDate;
     }
 
-    String getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    String getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    void setStartDate(String startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    void setEndDate(String endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
